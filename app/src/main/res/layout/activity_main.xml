@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.narify.edvoraassessment.DrawingAreaView
+        android:id="@+id/iv_drawing_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/ll_tools">
+
+        <LinearLayout
+            android:background="@drawable/rounded_corners"
+            android:id="@+id/ll_tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/ll_palette"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/ib_pencil"
+                style="@style/ToolStyle"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_pencil" />
+
+            <ImageButton
+                style="@style/ToolStyle"
+                android:id="@+id/ib_arrow"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_arrow" />
+
+            <ImageButton
+                style="@style/ToolStyle"
+                android:id="@+id/ib_rectangle"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_rectangle" />
+
+            <ImageButton
+                style="@style/ToolStyle"
+                android:id="@+id/ib_ellipse"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_ellipse" />
+
+            <ImageButton
+                android:id="@+id/ib_palette"
+                style="@style/ToolStyle"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_palette" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/rounded_corners"
+            android:layout_marginVertical="4dp"
+            android:padding="4dp"
+            android:id="@+id/ll_palette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_tools"
+            tools:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/ib_red"
+                style="@style/ColorStyle"
+                android:layout_marginHorizontal="8dp"
+                android:backgroundTint="#FF0000" />
+
+            <ImageButton
+                android:id="@+id/ib_green"
+                style="@style/ColorStyle"
+                android:layout_marginHorizontal="8dp"
+                android:backgroundTint="#00FF00" />
+
+            <ImageButton
+                android:id="@+id/ib_blue"
+                style="@style/ColorStyle"
+                android:layout_marginHorizontal="8dp"
+                android:backgroundTint="#0000FF" />
+
+            <ImageButton
+                android:id="@+id/ib_black"
+                style="@style/ColorStyle"
+                android:layout_marginHorizontal="8dp"
+                android:backgroundTint="#000000"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
